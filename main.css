@@ -1,8 +1,11 @@
 body {
     background-color: rgb(32, 30, 30);
-    width: 700px;
 }
-
+@media only screen and (max-width: 600px) {
+body {
+    background-color: rgb(32, 30, 30);
+}
+}
 .map {
     position: relative;
     left: 225px;
