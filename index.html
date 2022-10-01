@@ -41,8 +41,23 @@
     Site and Twitter bot made by <a href="https://latebat.me/">Latebat</a><br>
     Website data can be found <a href="https://github.com/Latebat/Isslocation.live">here</a><br>
     Twitter bot can be found <a href="https://twitter.com/ISS_location">here</a><br>
-    My Discord can be found  <a href="https://latebat.me/discord">here</a>
+    My Discord can be found <a href="https://latebat.me/discord">here</a><br>
+    Change background color here: <input type="color" id="colorID" oninput="changeColor()"> <br>
+    Reset background color to default here: <button class="button" onclick="resetColor()">Reset</button>
   </div>
+  <script>
+    // on input, get value and save it as 'storedValue'
+    function changeColor() {
+      var userColor = document.getElementById('colorID').value;
+      localStorage.setItem('storedValue', document.body.style.backgroundColor = userColor);
+    }
+
+    // if there is a value stored, update color picker and background color
+    if (localStorage.storedValue) {
+      document.getElementById('colorID').value = localStorage.storedValue;
+      document.body.style.backgroundColor = localStorage.storedValue;
+    }
+  </script>
   <style>
     a {
       text-decoration: none;
@@ -53,6 +68,13 @@
       text-decoration: none;
     }
   </style>
+  <script>
+    function resetColor() {
+      let colorRe = '#201E1E';
+      localStorage.setItem('storedValue', document.body.style.backgroundColor = colorRe);
+      document.getElementById('colorID').value = localStorage.storedValue;
+    }
+  </script>
 </body>
 
 </html>
